@@ -67,10 +67,6 @@ class Body extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          cButton("Decrypt Data", Colors.white, Colors.green, context),
-          SizedBox(
-            height: 20,
-          ),
           Text(
             "Results",
             style: Theme.of(context).textTheme.headline3,

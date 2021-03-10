@@ -25,9 +25,9 @@ class EncryptCubit extends Cubit<EncryptState> {
       // final encryptedData = encrypter.encrypt(textData, iv: iv);
 
       final plainText = state.textData;
-      final key = Key.fromLength(32);
-      final iv = IV.fromLength(8);
-      final encrypter = Encrypter(Salsa20(key));
+      final key = Key.fromSecureRandom(32);
+      final iv = IV.fromSecureRandom(16);
+      final encrypter = Encrypter(AES(key));
 
       final encryptedData = encrypter.encrypt(plainText, iv: iv);
       final decrypted = encrypter.decrypt(encryptedData, iv: iv);
